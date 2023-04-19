@@ -12,5 +12,5 @@ public class OperatingSystemDto {
     private String kernel;
     private LocalDateTime releaseDate;
     private Integer usages;
-    private List<ComputerBaseDto> computers;
+    private List<ComputerBaseDto> computers; // <--- This line is optional, no effect on filters
 }

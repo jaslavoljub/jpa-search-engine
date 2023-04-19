@@ -8,5 +8,5 @@ public class ComputerDto {
     private String name;
     private String ipAddress;
     private String brandName;
-    private OperatingSystemBaseDto operatingSystem;
+    private OperatingSystemBaseDto operatingSystem; // <--- This line is optional, no effect on filters
 }
