@@ -1,7 +1,7 @@
 package com.piinalpin.queryrequest.controller;
 
-import com.piinalpin.queryrequest.controller.dtos.ComputerDto;
-import com.piinalpin.queryrequest.controller.dtos.OperatingSystemDto;
+import com.piinalpin.queryrequest.dtos.ComputerDto;
+import com.piinalpin.queryrequest.dtos.OperatingSystemDto;
 import com.piinalpin.queryrequest.domain.common.query.SearchRequest;
 import com.piinalpin.queryrequest.domain.dao.Computer;
 import com.piinalpin.queryrequest.domain.dao.OperatingSystem;

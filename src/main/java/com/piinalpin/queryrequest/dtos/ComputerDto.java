@@ -1,11 +1,12 @@
-package com.piinalpin.queryrequest.controller.dtos;
+package com.piinalpin.queryrequest.dtos;
 
 import lombok.Data;
 
 @Data
-public class ComputerCommonDto {
+public class ComputerDto {
     private Long id;
     private String name;
     private String ipAddress;
     private String brandName;
+    private OperatingSystemBaseDto operatingSystem;
 }

@@ -1,4 +1,4 @@
-package com.piinalpin.queryrequest.controller.dtos;
+package com.piinalpin.queryrequest.dtos;
 
 import lombok.Data;
 
@@ -12,5 +12,5 @@ public class OperatingSystemDto {
     private String kernel;
     private LocalDateTime releaseDate;
     private Integer usages;
-    private List<ComputerCommonDto> computers;
+    private List<ComputerBaseDto> computers;
 }

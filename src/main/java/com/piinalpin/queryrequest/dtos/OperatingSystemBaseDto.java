@@ -1,13 +1,11 @@
-package com.piinalpin.queryrequest.controller.dtos;
+package com.piinalpin.queryrequest.dtos;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
-public class OperatingSystemCommonDto {
+public class OperatingSystemBaseDto {
     private Long id;
     private String name;
     private String version;
