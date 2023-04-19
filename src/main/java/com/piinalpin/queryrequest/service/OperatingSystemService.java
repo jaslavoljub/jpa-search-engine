@@ -1,6 +1,5 @@
 package com.piinalpin.queryrequest.service;
 
-import com.piinalpin.queryrequest.domain.common.query.AdvanceSearchSpecification;
 import com.piinalpin.queryrequest.domain.common.query.SearchRequest;
 import com.piinalpin.queryrequest.domain.common.query.SearchSpecification;
 import com.piinalpin.queryrequest.domain.dao.OperatingSystem;
@@ -18,15 +17,9 @@ public class OperatingSystemService {
     @Autowired
     private OperatingSystemRepository operatingSystemRepository;
 
-    public Page<OperatingSystem> searchOperatingSystemSimple(SearchRequest request) {
+    public Page<OperatingSystem> searchOperatingSystem(SearchRequest request) {
         SearchSpecification<OperatingSystem> specification = new SearchSpecification<>(request);
         Pageable pageable = SearchSpecification.getPageable(request.getPage(), request.getSize());
-        return operatingSystemRepository.findAll(specification, pageable);
-    }
-
-    public Page<OperatingSystem> searchOperatingSystem(SearchRequest request) {
-        AdvanceSearchSpecification<OperatingSystem> specification = new AdvanceSearchSpecification<>(request);
-        Pageable pageable = AdvanceSearchSpecification.getPageable(request.getPage(), request.getSize());
         return operatingSystemRepository.findAll(specification, pageable);
     }
 

@@ -1,6 +1,5 @@
 package com.piinalpin.queryrequest.service;
 
-import com.piinalpin.queryrequest.domain.common.query.AdvanceSearchSpecification;
 import com.piinalpin.queryrequest.domain.common.query.SearchRequest;
 import com.piinalpin.queryrequest.domain.common.query.SearchSpecification;
 import com.piinalpin.queryrequest.domain.dao.Computer;
@@ -15,15 +14,9 @@ public class ComputerService {
     @Autowired
     ComputerRepository computerRepository;
 
-    public Page<Computer> searchComputerSimple(SearchRequest request) {
+    public Page<Computer> searchComputer(SearchRequest request) {
         SearchSpecification<Computer> specification = new SearchSpecification<>(request);
         Pageable pageable = SearchSpecification.getPageable(request.getPage(), request.getSize());
-        return computerRepository.findAll(specification, pageable);
-    }
-
-    public Page<Computer> searchComputer(SearchRequest request) {
-        AdvanceSearchSpecification<Computer> specification = new AdvanceSearchSpecification<>(request);
-        Pageable pageable = AdvanceSearchSpecification.getPageable(request.getPage(), request.getSize());
         return computerRepository.findAll(specification, pageable);
     }
 
