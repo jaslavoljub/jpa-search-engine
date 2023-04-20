@@ -65,7 +65,7 @@ public class SearchSpecification<T> implements Specification<T> {
                 return cb.equal(path, value);
             case NOT_EQUAL:
                 return cb.notEqual(path, value);
-            case GT:
+            case GREATER_THAN:
                 if (path.getJavaType().isAssignableFrom(Integer.class)) {
                     return cb.greaterThan(path.as(Integer.class), Integer.parseInt(value.toString()));
                 } else if (path.getJavaType().isAssignableFrom(Long.class)) {
@@ -78,7 +78,7 @@ public class SearchSpecification<T> implements Specification<T> {
                 } else {
                     throw new UnsupportedOperationException("Unsupported field type for GT operator: " + path.getJavaType());
                 }
-            case GTE:
+            case GREATER_OR_EQUAL_TO:
                 if (path.getJavaType().isAssignableFrom(Integer.class)) {
                     return cb.greaterThanOrEqualTo(path.as(Integer.class), Integer.parseInt(value.toString()));
                 } else if (path.getJavaType().isAssignableFrom(Long.class)) {
@@ -91,7 +91,7 @@ public class SearchSpecification<T> implements Specification<T> {
                 } else {
                     throw new UnsupportedOperationException("Unsupported field type for GT operator: " + path.getJavaType());
                 }
-            case LT:
+            case LESS_THAN:
                 if (path.getJavaType().isAssignableFrom(Integer.class)) {
                     return cb.lessThan(path.as(Integer.class), Integer.parseInt(value.toString()));
                 } else if (path.getJavaType().isAssignableFrom(Long.class)) {
@@ -104,7 +104,7 @@ public class SearchSpecification<T> implements Specification<T> {
                 } else {
                     throw new UnsupportedOperationException("Unsupported field type for GT operator: " + path.getJavaType());
                 }
-            case LTE:
+            case LESS_OR_EQUAL_TO:
                 if (path.getJavaType().isAssignableFrom(Integer.class)) {
                     return cb.lessThanOrEqualTo(path.as(Integer.class), Integer.parseInt(value.toString()));
                 } else if (path.getJavaType().isAssignableFrom(Long.class)) {
@@ -134,7 +134,7 @@ public class SearchSpecification<T> implements Specification<T> {
                 return path.in(values);
             case NOT_IN:
                 return cb.not(path.in(values));
-            case BEGIN_WITH:
+            case STARTS_WITH:
                 return cb.like(cb.lower(path.as(String.class)), filter.getValue().toString().toLowerCase() + "%");
             case END_WITH:
                 return cb.like(cb.lower(path.as(String.class)), "%" + filter.getValue().toString().toLowerCase());

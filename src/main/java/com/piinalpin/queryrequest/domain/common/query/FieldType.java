@@ -56,6 +56,9 @@ public enum FieldType {
         public Object parse(String value) {
             return value;
         }
+    },
+    UUID {
+        public Object parse(String value) { return java.util.UUID.fromString(value); }
     };
 
     public abstract Object parse(String value);
